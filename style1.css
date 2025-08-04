@@ -1,0 +1,197 @@
+:root {
+    --primary-color: #6C7A89;
+    /* Azul grisáceo */
+    --secondary-color: #5e95af;
+    /* Azul cielo */
+    --tertiary-color: #000a14;
+    --four-color: #00254e;
+    /* Azul petróleo */
+    --text-dark: #333;
+    --text-light: #f9f9f9;
+    --white: #ffffff;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --water-color: rgba(173, 216, 230, 0.3);
+    /* Color agua translúcido */
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #000814;
+    overflow: hidden;
+    height: 100%;
+}
+
+.carta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #fefae0, #faedcd);
+    z-index: 0;
+    box-sizing: border-box;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.bloqueo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 15, 37, 0.747);
+    z-index: 3;
+    pointer-events: all;
+    transition: opacity 1s ease;
+}
+
+.bloqueo.oculto {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.panel {
+    height: 100vh;
+    width: 50%;
+    background: linear-gradient(to bottom, #0d1b2a, #000814);
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 2;
+    transition: transform 1s ease;
+}
+
+.panel-izquierdo {
+    left: 0;
+    border-radius: 0 100px 100px 0;
+}
+
+.panel-derecho {
+    right: 0;
+    border-radius: 100px 0 0 100px;
+}
+
+.panel-izquierdo.open {
+    transform: translateX(-100%);
+}
+
+.panel-derecho.open {
+    transform: translateX(100%);
+}
+
+.decorative-border {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 30px;
+    border: 3px dotted #64748b;
+    border-left: none;
+    border-radius: 0 80px 80px 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.rose {
+    position: absolute;
+    top: 30px;
+    width: 80px;
+    height: 80px;
+    z-index: 3;
+}
+
+.rose svg {
+    width: 100%;
+    height: 100%;
+    stroke: #fefefe;
+    fill: none;
+}
+
+.decoraciones {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 4;
+}
+
+.decoraciones img {
+    position: absolute;
+    transition: opacity 1s ease;
+    cursor: pointer;
+}
+
+.decoraciones.hidden img {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.center-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+.centered-image {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    transform-origin: center;
+    z-index: 4;
+    height: auto;
+}
+
+.centered-image1 {
+    position: absolute;
+    top: 41%;
+    left: 0%;
+    transform-origin: center;
+    z-index: 4;
+    height: auto;
+}
+
+.particles-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--tertiary-color) 0%, var(--four-color) 30%, var(--secondary-color) 100%);
+    /* azul a blanco */
+    overflow: hidden;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: moveParticle linear infinite;
+}
+
+@keyframes moveParticle {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh) translateX(100vw);
+        opacity: 0;
+    }
+}

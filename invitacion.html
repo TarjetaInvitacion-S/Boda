@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>¡Nos Casamos!</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@400..700&family=My+Soul&family=Parisienne&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=1.0.3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+</head>
+
+<style>
+    .foto_central {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        /* 100px + 6px padding x2 */
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #001F54, #4FC3F7);
+        /* azul oscuro a claro */
+        padding: 6px;
+        z-index: 5;
+        box-shadow: 0 0 20px rgba(0, 64, 255, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .foto_contenido {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: white;
+    }
+
+    .foto_contenido img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+</style>
+
+<body>
+
+    <!-- <img src="https://1drv.ms/i/c/877bec01de16f337/IQQUDGIfXOybR45iNnsiJsOxAQhuKdVHGP7SIu7e4D2xVPs?width=1024"
+        alt="flores" class="flores-encima"> -->
+    <div class="particles-background"></div>
+    <div class="container">
+        <section class="section hero water-section" style="text-align: center;">
+            <div style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: -50px;
+                ">
+                <img src="fotos/flores.png" width="450px" alt="">
+            </div>
+
+            <div class="foto_central">
+                <div class="foto_contenido">
+                    <img src="fotos/IMG_6338.JPG" alt="Foto central" />
+                </div>
+            </div>
+            <canvas class="starry-bg"></canvas>
+            <h1> Nuestro Sí Para Siempre </h1>
+            <h4>¡ Nos Casamos !</h4>
+            <!-- <p>Con el corazón lleno de amor, te invitamos a compartir la alegría de nuestra unión.</p> -->
+            <div class="names" id="typing-text" style="margin-bottom: 50px;">
+                <span class="name">Stefanny Guacas</span><br>
+                <span class="ampersand">&</span><br>
+                <span class="name">Oscar Castro</span>
+            </div>
+            <br>
+            <br>
+
+
+
+        </section>
+        <div class="section our-story" style="margin-top: -80px; position: relative;">
+            <section class="section">
+                <style>
+                    .section #flor {
+                        position: absolute;
+                        bottom: 0px;
+                        right: 0;
+                    }
+
+                    .section #flor1 {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                </style>
+                <img src="fotos/IMG_6422.png" width="80%" id="foto1" alt="">
+                <img src="fotos/flores1.png" id="flor" width="200px" alt="">
+                <img src="fotos/flores2.png" id="flor1" width="200px" alt="">
+            </section>
+
+            <section>
+                <div style="margin-top: 40px;">
+                    <hr>
+                    <p id="frace" class="frace">"La historia comienza cuando dos personas que ni soñaban conocerse
+                        terminan
+                        encontrandose en el instante menos esperado pero en el momento indicado "</p>
+                    <br>
+                </div>
+
+                <div class="bordes" style="position: relative; margin-top: 100px; padding-bottom: 200px;">
+                    <div>
+                        <img src="fotos/BORDE3.png" id="borde1" width="150px" alt=""
+                            style="position: absolute; top: -80px; left: 0; z-index: 10;">
+                        <h2 class="titulos"
+                            style="position: relative; z-index: 1; max-width: 270px; margin: auto; font-size: 17px;">
+                            <strong>
+                                CON LA BENDICIÓN DE DIOS Y NUESTROS PADRES
+                            </strong>
+                        </h2>
+                    </div>
+                    <div style="text-align: left; margin: 45px;">
+                        <p class="frace" style="text-align: left; margin-bottom: 8px;">Enis Montilla Bastidas </p>
+                        <p class="frace"> Victor Marino Guacas</p>
+
+                        <p class="frace" style="text-align: right; margin-bottom: 8px;">Oneida Bolaños Ordoñes</p>
+                        <p class="frace" style="text-align: right;">Oscar Armando Castro</p>
+                    </div>
+
+                    <div style="text-align: left; margin: 45px; margin-top: -30px;">
+                        <h2 class="titulos"
+                            style="position: relative; z-index: 1; max-width: 270px; margin: auto; font-size: 17px;">
+                            <strong>
+                                NUESTROS PADRINOS
+                            </strong>
+                        </h2>
+                        <p class="frace" style="margin-top: 30px; text-align: left; margin-bottom: -20px;">Leonor Pastas
+                        </p>
+                        <p class="frace" style="margin-top: 30px; text-align: left;">Alexánder Torres</p>
+                    </div>
+                    <div style="text-align: right; margin: 45px; margin-bottom: -150px; margin-top: -30px;">
+                        <h2 class="titulos"
+                            style="position: relative; z-index: 1; max-width: 270px; margin: auto; font-size: 17px;">
+                            <strong>
+                                NUESTROS TESTIGOS
+                            </strong>
+                        </h2>
+                        <p class="frace" style="margin-top: 30px; text-align: right; margin-bottom: -20px;">Paola Andrea
+                            Pantoja</p>
+                        <p class="frace" style="margin-top: 30px; text-align: right;">Marlon Alejandro de la Rosa</p>
+                        <br>
+                    </div>
+
+
+                    <img src="fotos/BORDE4.png" id="borde2" width="200px" alt=""
+                        style="position: absolute; bottom: 0; right: 0; z-index: 0;">
+                </div>
+            </section>
+
+
+            <div style="margin-top: 100px;"></div>
+        </div>
+        <section class="section gallery" style="margin-top: -80px; margin: -10%;">
+            <div style="position: relative; width: 100%; overflow: hidden; margin-top: -80px;">
+                <img src="fotos/IMG_6086.png" width="100%" alt="" style="display: block; width: 100%; z-index: 100; ">
+                <div style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to bottom, rgba(0, 0, 255, 0) 0%, rgba(46, 46, 46, 0.918) 100%);
+                "></div>
+            </div>
+
+            <div
+                style="width: 85%; margin: auto; background-color: rgba(0, 0, 0, 0.87); margin-top: -250px; margin-bottom: 100px; color: white; border: 1px solid black;">
+                <p id="frace"
+                    style="color: white; background-color: rgba(0, 0, 0, 0.568); font-size: 15px; margin-top: 0px;">"
+                    Entretejí la vida de ambos de tal forma que los hilos de su corazón y de su espíritu se
+                    mezclaran y formarán un hermoso tapiz, a pesar de ser tan distintos. Esta obra de arte que
+                    ahora
+                    son ustedes es una manifestación de mi sabiduría, mi perspicacia, y en especial, de mi amor. "</p>
+                <hr>
+                <hr>
+                <hr>
+                <hr>
+                <hr>
+                <hr>
+            </div>
+
+        </section>
+
+
+        <section class="section details" style="margin-top: -130px;">
+
+            <div class="details-card" style="position: relative; overflow: hidden; ">
+                <div style="width: 35%; height: 105%; position: absolute; overflow: hidden;">
+                    <img src="fotos/detalles.png" alt=""
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                </div>
+
+                <div>
+                    <div style="width: 85%; margin-left: 22%; scale: 0.9;">
+                        <div class="detail-block">
+                            <h2 style="font-size: 20px; color: #001F54; margin-top: -80px;">Con el corazón lleno de
+                                amor, te invitamos a
+                                compartir la
+                                alegría de nuestra unión</h2>
+                            <br><br><br>
+                        </div>
+
+                        <div class="Ceremonia">
+                            <strong>Ceremonia</strong>
+                            <p>5:00 PM <br><span>Iglesia Sagrado Corazón de Jesús</span></p>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+
+                        <style>
+                            .Ceremonia {
+                                font-size: 19px;
+                                padding: 10%;
+                                margin-bottom: -50px;
+                            }
+
+                            .fecha {
+                                font-size: 19px;
+                                margin-bottom: -50px;
+                            }
+
+                            .dia {
+                                font-family: 'Playfair Display', serif;
+                                font-size: 50px;
+                                margin-bottom: -30px;
+                            }
+                        </style>
+                        <div style="display: flex;">
+                            <div
+                                style="flex: 1; border-right: 1px solid black; text-align: center; padding: 5%; padding-top: 10%;">
+                                <div class="fecha">AGOSTO</div><br>
+                                <div class="dia">09</div><br>
+                                <div class="fecha">2025</div>
+                            </div>
+                            <div style="flex: 2; text-align: center; padding-left: 5%; padding-top: 7%;">
+                                <strong class="fecha">Recepcion</strong><br>
+                                <span class="fecha">7:00 PM</span><br>
+                                <span class="fecha">San Ezequiel Moreno</span><br>
+                                <p class="subtext">Manzana L, <br> Casa 12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="gift-message">Tu presencia es nuestro mejor regalo</p>
+
+            <div class="countdown-elegant">
+                <h3 id="frace" class="frace">“Cada segundo nos acerca a nuestro gran día”</h3>
+                <div class="countdown-row">
+                    <div class="countdown-box">
+                        <span id="days">00</span>
+                        <label>Días</label>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="hours">00</span>
+                        <label>Horas</label>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="minutes">00</span>
+                        <label>Minutos</label>
+                    </div>
+                    <div class="countdown-box">
+                        <span id="seconds">00</span>
+                        <label>Segundos</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section rsvp">
+            <img src="fotos/IMG_6062.png" width="100%" style="scale: 1.2;" alt="" style="margin-bottom: 50px;">
+            <hr hidden>
+            <span class="frace" id="frace"> " TODO POR AMOR A DIOS Y CÓMO ÉL LO QUIERA "</span><br>
+            <br>
+            <hr>
+            <section class="mapa">
+                <iframe width="100%" height="250" style="border:0; display:block; margin: auto;" loading="lazy"
+                    allowfullscreen src="https://maps.google.com/maps?q=1.21964,-77.26575&z=17&output=embed"></iframe>
+                </iframe>
+            </section>
+
+            <br>
+            <br>
+            <br>
+        </section>
+
+
+
+        <footer class="section hero water-section">
+            <canvas class="starry-bg"></canvas>
+            <p>Con amor, Stefanny Guacas y Oscar Castro</p>
+            <p>© 2025 Nos casamos !.</p>
+            <canvas class="starry-bg"></canvas>
+        </footer>
+    </div>
+
+    <script>
+        // Estrellas animadas para secciones con efecto agua
+        const canvases = document.querySelectorAll('.starry-bg');
+        canvases.forEach(canvas => {
+            const ctx = canvas.getContext('2d');
+            let stars = [];
+
+            function resizeCanvas() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+                initStars();
+            }
+
+            function initStars() {
+                stars = [];
+                for (let i = 0; i < 50; i++) {
+                    stars.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        radius: Math.random() * 1.5 + 0.5,
+                        speed: Math.random() * 0.3 + 0.1
+                    });
+                }
+            }
+
+            function drawStars() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'white';
+                ctx.globalAlpha = 0.8;
+                stars.forEach(star => {
+                    ctx.beginPath();
+                    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    star.y += star.speed;
+                    if (star.y > canvas.height) star.y = 0;
+                });
+                requestAnimationFrame(drawStars);
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            drawStars();
+        });
+
+        // Contador regresivo
+        // Fecha: 9 de agosto del 2025, puedes ajustar la hora si lo deseas
+        const weddingDate = new Date("2025-08-09T00:00:00").getTime();
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.querySelector(".countdown-container").innerHTML = "<span style='font-size: 1.2em;'>¡Ya nos casamos!</span>";
+            }
+        }, 1000);
+
+        // Partículas de fondo
+        const particlesContainer = document.querySelector('.particles-background');
+        const numParticles = 40;
+        for (let i = 0; i < numParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 10 + 5;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.setProperty('--x1', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--y1', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--s1', `${Math.random() * 0.5 + 0.8}`);
+            particle.style.setProperty('--x2', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--y2', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--s2', `${Math.random() * 0.5 + 0.8}`);
+            particle.style.setProperty('--x3', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--y3', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--s3', `${Math.random() * 0.5 + 0.8}`);
+            particle.style.setProperty('--x4', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--y4', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--s4', `${Math.random() * 0.5 + 0.8}`);
+            particle.style.setProperty('--x5', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--y5', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--s5', `${Math.random() * 0.5 + 0.8}`);
+            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+
+    <script>
+        const spans = document.querySelectorAll('#typing-text span');
+        let currentSpan = 0;
+        const texts = [];
+
+        // Guardamos los textos originales y vaciamos los spans
+        spans.forEach(span => {
+            texts.push(span.textContent);
+            span.textContent = ''; // Oculta el texto antes de empezar
+        });
+
+        function typeText(span, text, index = 0, callback) {
+            if (index < text.length) {
+                span.textContent += text.charAt(index);
+                setTimeout(() => typeText(span, text, index + 1, callback), 80);
+            } else {
+                span.classList.remove('typing-cursor');
+                if (callback) callback();
+            }
+        }
+
+        function startTyping() {
+            if (currentSpan < spans.length) {
+                const span = spans[currentSpan];
+                const text = texts[currentSpan];
+                span.classList.add('typing-cursor');
+                typeText(span, text, 0, () => {
+                    currentSpan++;
+                    setTimeout(startTyping, 300); // pausa entre líneas
+                });
+            }
+        }
+
+        startTyping();
+    </script>
+    <script>
+        function typeEffect(element, speed = 80) {
+            const text = element.getAttribute('data-full-text'); // texto original
+            let i = 0;
+            const interval = setInterval(() => {
+                element.textContent += text.charAt(i);
+                i++;
+                if (i >= text.length) clearInterval(interval);
+            }, speed);
+        }
+
+        // Configurar observer de scroll
+        const options = {
+            threshold: 0.3 // cuando el 30% se vea en pantalla
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    // Si no lo hemos mostrado todavía
+                    if (!el.classList.contains('typed')) {
+                        typeEffect(el, 70);
+                        el.classList.add('typed'); // para no repetir
+                        obs.unobserve(el);         // deja de observarlo
+                    }
+                }
+            });
+        }, options);
+
+        // Preparar elementos
+        document.querySelectorAll('.frace').forEach(el => {
+            el.setAttribute('data-full-text', el.textContent);
+            el.textContent = '';
+            observer.observe(el);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Seleccionar todos los elementos que se animarán al hacer scroll
+            const elementsToAnimate = document.querySelectorAll(
+                '.container, .section h1, .section h2, .section p, .story-node, .countdown-box, .rsvp-button, .foto_central, .names, .detail-block, #foto1, #flor, #flor1, #borde1, #borde2'
+            );
+
+            // Crear un Intersection Observer
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Añadir clase is-visible con un pequeño retraso para animaciones escalonadas
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, index * 100); // Retraso escalonado de 100ms por elemento
+                        // Dejar de observar el elemento después de animarlo
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Activa cuando el 10% del elemento es visible
+            });
+
+            // Observar cada elemento
+            elementsToAnimate.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Animación de escritura para los nombres (ya existente, ajustado para trabajar con is-visible)
+            const spans = document.querySelectorAll('#typing-text span');
+            let currentSpan = 0;
+            const texts = [];
+
+            spans.forEach(span => {
+                texts.push(span.textContent);
+                span.textContent = ''; // Oculta el texto antes de empezar
+            });
+
+            function typeText(span, text, index = 0, callback) {
+                if (index < text.length) {
+                    span.textContent += text.charAt(index);
+                    setTimeout(() => typeText(span, text, index + 1, callback), 60);
+                } else {
+                    span.classList.remove('typing-cursor');
+                    if (callback) callback();
+                }
+            }
+
+            function startTyping() {
+                if (currentSpan < spans.length) {
+                    const span = spans[currentSpan];
+                    const text = texts[currentSpan];
+                    span.classList.add('typing-cursor');
+                    typeText(span, text, 0, () => {
+                        currentSpan++;
+                        setTimeout(startTyping, 150);
+                    });
+                }
+            }
+
+            // Observar el contenedor de nombres
+            const typingObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startTyping();
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.4 });
+
+            typingObserver.observe(document.getElementById('typing-text'));
+
+        });
+    </script>
+
+</body>
+
+</html>

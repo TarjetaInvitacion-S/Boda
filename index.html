@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
+    <title>Nos Casamos !</title>
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body>
+
+    <audio id="musica" src="musica.mp3" autoplay></audio>
+
+    <!-- Carta con iframe -->
+    <div class="carta" id="carta">
+        <!-- <iframe src="index.html"></iframe> -->
+        <!-- <div class="bloqueo" id="bloqueo"></div> -->
+        <div class="particles-background"></div>
+    </div>
+
+    <!-- Decoraciones -->
+    <div class="decoraciones" id="decoraciones">
+        <img src="fotos/broche.png" id="broche" width="100" alt=""
+            style="top: 41%; left: calc(50% - 50px); z-index: 5;" />
+        <!-- <img src="lazo.png" width="500" alt="" style="top: 40%; left: -140px; z-index: 4;" /> -->
+        <div class="center-container">
+            <img src="fotos/lazo.png" width="2100" alt="" class="centered-image1" />
+            <img src="fotos/lazo1.png" width="2100" alt="" class="centered-image" />
+        </div>
+    </div>
+
+    <!-- Panel izquierdo -->
+    <div class="panel panel-izquierdo" id="panelIzquierdo"></div>
+
+    <!-- Panel derecho -->
+    <div class="panel panel-derecho" id="panelDerecho"></div>
+
+    <!-- Script -->
+    <script>
+        document.getElementById('broche').addEventListener('click', () => {
+
+            const audio = document.getElementById('musica');
+            audio.volume = 1;   // volumen al máximo
+            audio.play().catch(err => console.log(err));
+            const body = document.documentElement;
+            if (body.requestFullscreen) {
+                body.requestFullscreen().catch(err => {
+                    console.warn('No se pudo poner en fullscreen:', err);
+                });
+            }
+            // const bloqueo = document.getElementById('bloqueo');
+            const decoraciones = document.getElementById('decoraciones');
+
+            // Remover el bloqueo inmediatamente
+            // bloqueo.remove();
+
+            // Animar ambos paneles
+            document.getElementById('panelIzquierdo').classList.add('open');
+            document.getElementById('panelDerecho').classList.add('open');
+
+            // Quitar los estilos de decoraciones
+            decoraciones.removeAttribute('class');
+
+            // Limpiar decoraciones
+            decoraciones.innerHTML = '';
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('broche').addEventListener('click', () => {
+                const carta = document.getElementById('carta');
+                if (!carta) {
+                    console.warn('Elemento con id="carta" no encontrado');
+                    return;
+                }
+
+                const bloqueo = document.getElementById('bloqueo');
+                if (bloqueo) bloqueo.remove();
+
+                const iframe = document.createElement('iframe');
+                iframe.src = 'invitacion.html';
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+
+                carta.insertBefore(iframe, carta.firstChild); // <- Aquí el error si "carta" no existe
+
+                document.getElementById('panelIzquierdo')?.classList.add('open');
+                document.getElementById('panelDerecho')?.classList.add('open');
+
+                const decoraciones = document.getElementById('decoraciones');
+                if (decoraciones) {
+                    decoraciones.removeAttribute('class');
+                    decoraciones.innerHTML = '';
+                }
+            });
+        });
+    </script>
+    <script>
+        const container = document.querySelector('.particles-background');
+
+        for (let i = 0; i < 100; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 2 + 1; // tamaño entre 1 y 3px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${5 + Math.random() * 10}s`; // entre 5 y 15s
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+
+            container.appendChild(particle);
+        }
+    </script>
+    <script>
+        document.getElementById('broche').addEventListener('click', () => {
+            const panelIzquierdo = document.getElementById('panelIzquierdo');
+            const panelDerecho = document.getElementById('panelDerecho');
+
+            // Cuando termine la animación, borrarlos del DOM
+            const removePanels = () => {
+                panelIzquierdo.remove();
+                panelDerecho.remove();
+            }
+
+            // Esperamos a que termine la transición y los quitamos
+            panelDerecho.addEventListener('transitionend', removePanels, { once: true });
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
