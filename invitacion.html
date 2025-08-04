@@ -115,10 +115,37 @@
             <section>
                 <div style="margin-top: 40px;">
                     <hr>
-                    <p id="frace" class="frace">"La historia comienza cuando dos personas que ni soñaban conocerse
-                        terminan
-                        encontrandose en el instante menos esperado pero en el momento indicado "</p>
+                    <p id="frace"></p>
                     <br>
+
+                    <script>
+                        const texto = `"La historia comienza cuando dos personas que ni soñaban conocerse terminan encontrandose en el instante menos esperado pero en el momento indicado"`;
+                        const elemento = document.getElementById('frace');
+                        let i = 0;
+                        let yaSeEjecuto = false; // evitar que se repita
+
+                        function escribir() {
+                            if (i < texto.length) {
+                                elemento.textContent += texto.charAt(i);
+                                i++;
+                                setTimeout(escribir, 60);
+                            }
+                        }
+
+                        const fraceObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting && !yaSeEjecuto) {
+                                    escribir();
+                                    yaSeEjecuto = true;
+                                    fraceObserver.unobserve(elemento);
+                                }
+                            });
+                        }, {
+                            threshold: 0.3 // porcentaje visible que debe tener el elemento (30%)
+                        });
+
+                        fraceObserver.observe(elemento);
+                    </script>
                 </div>
 
                 <div class="bordes" style="position: relative; margin-top: 100px; padding-bottom: 200px;">
