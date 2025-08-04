@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.9" />
     <title>Nos Casamos !</title>
     <link rel="stylesheet" href="style1.css">
 
@@ -22,8 +22,56 @@
 
     <!-- Decoraciones -->
     <div class="decoraciones" id="decoraciones">
+        <div class="mensaje-invitacion" id="mensaje" style="display: flex; justify-content: center; align-items: center;">
+            ¡Haz clic para abrir la invitación!
+        </div>
         <img src="fotos/broche.png" id="broche" width="100" alt=""
             style="top: 41%; left: calc(50% - 50px); z-index: 5;" />
+        <style>
+            .mensaje-invitacion {
+                margin: auto;
+                position: relative;
+                text-align: center;
+                top: 70%;
+                transform: translateX(-50%);
+                padding: 10px 20px;
+                width: auto;
+                max-width: 50%;
+                font-family: 'Georgia', serif;
+                font-size: 1.4em;
+                color: #7a4e2d;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 12px;
+                animation: pulse 2s infinite ease-in-out;
+            }
+
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.1);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            #broche {
+                position: absolute;
+                width: 100px;
+                top: 41%;
+                left: calc(50% - 50px);
+                z-index: 5;
+                animation: pulse 1.2s infinite ease-in-out;
+                cursor: pointer;
+            }
+        </style>
+
+
         <!-- <img src="lazo.png" width="500" alt="" style="top: 40%; left: -140px; z-index: 4;" /> -->
         <div class="center-container">
             <img src="fotos/lazo.png" width="2100" alt="" class="centered-image1" />
@@ -39,34 +87,36 @@
 
     <!-- Script -->
     <script>
-        document.getElementById('broche').addEventListener('click', () => {
-
+        function abrirInvitacion() {
             const audio = document.getElementById('musica');
-            audio.volume = 1;   // volumen al máximo
+            audio.volume = 1;
             audio.play().catch(err => console.log(err));
+
             const body = document.documentElement;
             if (body.requestFullscreen) {
                 body.requestFullscreen().catch(err => {
                     console.warn('No se pudo poner en fullscreen:', err);
                 });
             }
-            // const bloqueo = document.getElementById('bloqueo');
+
             const decoraciones = document.getElementById('decoraciones');
 
-            // Remover el bloqueo inmediatamente
-            // bloqueo.remove();
+            document.getElementById('panelIzquierdo')?.classList.add('open');
+            document.getElementById('panelDerecho')?.classList.add('open');
 
-            // Animar ambos paneles
-            document.getElementById('panelIzquierdo').classList.add('open');
-            document.getElementById('panelDerecho').classList.add('open');
-
-            // Quitar los estilos de decoraciones
-            decoraciones.removeAttribute('class');
-
-            // Limpiar decoraciones
+            decoraciones?.removeAttribute('class');
             decoraciones.innerHTML = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const broche = document.getElementById('broche');
+            const mensaje = document.getElementById('mensaje');
+
+            if (broche) broche.addEventListener('click', abrirInvitacion);
+            if (mensaje) mensaje.addEventListener('click', abrirInvitacion);
         });
     </script>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -137,6 +187,5 @@
 
 
 </body>
-
 
 </html>
