@@ -146,7 +146,7 @@ iframe {
 .centered-image {
     position: absolute;
     top: 50%;
-    left: 52%;
+    left: 0%;
     transform: translate(-50%, -50%) rotate(-10deg);
     transform-origin: center;
     z-index: 4;
@@ -195,4 +195,5 @@ iframe {
         opacity: 0;
     }
 }
+
 
