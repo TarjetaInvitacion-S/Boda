@@ -91,7 +91,7 @@
                 const texto1 = `Stefanny Guacas`;
                 const elemento1 = document.getElementById('nombre');
                 let j = 0;
-                let yaSeEjecuto1 = false; // evitar que se repita
+                let yaSeEjecuto1 = false;
 
                 function escribir1() {
                     if (j < texto1.length) {
@@ -101,20 +101,29 @@
                     }
                 }
 
+                // Fallback: después de 3 segundos, asegurar el nombre completo
+                function forzarNombreCompleto() {
+                    if (elemento1.textContent !== texto1) {
+                        elemento1.textContent = texto1;
+                    }
+                }
+
                 const fraceObserver1 = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting && !yaSeEjecuto1) {
                             escribir1();
+                            setTimeout(forzarNombreCompleto, texto1.length * 80); // tiempo razonable + margen
                             yaSeEjecuto1 = true;
                             fraceObserver1.unobserve(elemento1);
                         }
                     });
                 }, {
-                    threshold: 0.3 // porcentaje visible que debe tener el elemento (30%)
+                    threshold: 0.3
                 });
 
                 fraceObserver1.observe(elemento1);
             </script>
+
             <br>
             <br>
 
