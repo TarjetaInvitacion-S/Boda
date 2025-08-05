@@ -5,11 +5,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.9" />
     <title>Nos Casamos !</title>
-    <link rel="stylesheet" href="style1.css">
+    <link id="estilo" rel="stylesheet" href="style1.css">
 
 </head>
 
 <body>
+    <script>
+        // Actualiza el href con un parámetro de versión único (timestamp)
+        document.getElementById("estilo").href = "style1.css?v=" + new Date().getTime();
+    </script>
 
     <audio id="musica" src="musica.mp3" autoplay></audio>
 
@@ -22,7 +26,8 @@
 
     <!-- Decoraciones -->
     <div class="decoraciones" id="decoraciones">
-        <div class="mensaje-invitacion" id="mensaje" style="display: flex; justify-content: center; align-items: center;">
+        <div class="mensaje-invitacion" id="mensaje"
+            style="display: flex; justify-content: center; align-items: center;">
             ¡Haz clic para abrir la invitación!
         </div>
         <img src="fotos/broche.png" id="broche" width="100" alt=""
@@ -73,9 +78,9 @@
 
 
         <!-- <img src="lazo.png" width="500" alt="" style="top: 40%; left: -140px; z-index: 4;" /> -->
-        <img src="fotos/lazo1.png" width="2100" alt="" class="centered-image"/>
-        <img src="fotos/lazo1.png" width="2100" alt="" class="centered-image1"/>
-        </div>
+        <img src="fotos/lazo1.png" width="2100" alt="" class="centered-image" />
+        <img src="fotos/lazo1.png" width="2100" alt="" class="centered-image1" />
+    </div>
     </div>
 
     <!-- Panel izquierdo -->
@@ -188,4 +193,3 @@
 </body>
 
 </html>
-
