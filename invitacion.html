@@ -88,31 +88,30 @@
             </div>
 
             <script>
-                const texto1 = `Stefanny Guacas`;
-                const elemento1 = document.getElementById('nombre');
+                const texto1 = "Stefanny Guacas";
+                const elemento1 = document.getElementById("nombre");
                 let j = 0;
+                let textoEscrito = "";
                 let yaSeEjecuto1 = false;
 
                 function escribir1() {
                     if (j < texto1.length) {
-                        elemento1.textContent += texto1.charAt(j);
+                        textoEscrito += texto1.charAt(j);     // Construye el texto en memoria
+                        elemento1.textContent = textoEscrito; // Reemplaza todo el contenido, sin +=
                         j++;
                         setTimeout(escribir1, 60);
                     }
                 }
 
-                // Fallback: después de 3 segundos, asegurar el nombre completo
                 function forzarNombreCompleto() {
-                    if (elemento1.textContent !== texto1) {
-                        elemento1.textContent = texto1;
-                    }
+                    elemento1.textContent = texto1;
                 }
 
                 const fraceObserver1 = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting && !yaSeEjecuto1) {
                             escribir1();
-                            setTimeout(forzarNombreCompleto, texto1.length * 80); // tiempo razonable + margen
+                            setTimeout(forzarNombreCompleto, texto1.length * 80); // Reaseguro
                             yaSeEjecuto1 = true;
                             fraceObserver1.unobserve(elemento1);
                         }
@@ -123,6 +122,7 @@
 
                 fraceObserver1.observe(elemento1);
             </script>
+
 
             <br>
             <br>
